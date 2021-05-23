@@ -1,4 +1,5 @@
-let preguntas = readText("../docs/preguntas/animals.json");
+let preguntas = readText("https://emerdinger.github.io/docs/preguntas/animals.json");
+console.log('prueba 1')
 let interprete_pg = JSON.parse(preguntas);
 let pregunta;
 let respuestas;
