@@ -1,8 +1,5 @@
-let interprete_pg;
-fetch("../docs/preguntas/sports.json").then(response => response.json()).then(data=>{
-  console.log("data", data);
-  interprete_pg = data;
-});
+let preguntas = readText("../preguntas/sports.json");
+let interprete_pg = JSON.parse(preguntas);
 let pregunta;
 let respuestas;
 let btn_correspondiente = [select_id("btn1"), select_id("btn2"), select_id("btn3"), select_id("btn4")];
@@ -95,4 +92,17 @@ function select_id(id) {
 
 function style(id) {
     return select_id(id).style
+}
+
+function readText(local_route) {
+    var text = null;
+    var xmlhttp = new XMLHttpRequest();
+    xmlhttp.open("GET", local_route, false);
+    xmlhttp.send();
+
+    if (xmlhttp.status == 200) {
+        text = xmlhttp.responseText;
+    }
+
+    return text;
 }
