@@ -1,0 +1,58 @@
+#triviate{
+    font-weight: 1000;
+    font-size: 5vh;
+    color: white;
+}
+#triviate2{
+    font-weight: 1000;
+    font-size: 5vh;
+    color: black;
+}
+#navBar-Triviate{
+    margin-left: 12%;
+    margin-right: 200px;
+    font-size: larger;
+}
+.navbarColor{
+    transition: 1s;
+    background-color: black !important;
+    opacity: 0.9;
+}
+.navbarColorNo{
+    transition: 1s;
+    background-color: transparent !important;
+}
+#item{
+    color: white;
+    font-weight: 1000;
+}
+#item2{
+    color: black;
+    font-weight: 1000;
+}
+
+.footer1{
+    background-color: rgb(59, 58, 58);
+    padding-top: 60px;
+    padding-bottom: 60px;
+    color: white;
+}
+
+.f-emerlive h3{
+    font-weight: 1000;
+    font-size: 5vh;
+}
+
+/* Responsive */
+@media only screen and (max-width: 1000px) {
+    #navBar-Triviate{
+        margin-left: 10%;
+        margin-right: 0;
+    } 
+}
+@media only screen and (max-width: 500px) {
+    #navBar-Triviate{
+        margin-left: 8%;
+        margin-right: 0;
+    }      
+}

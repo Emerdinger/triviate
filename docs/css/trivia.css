@@ -1,0 +1,72 @@
+.fondo-preguntas{
+    background: url(../images/Deportes.jpg);
+    background-repeat: no-repeat;
+    background-size: cover;
+	background-position: center center;
+}
+.trivia{
+    height: 100vh;
+    padding-top: 5vh;
+}
+.trivia h1{
+    font-weight: 1000;
+    font-size: 8vh;
+}
+#categoria{
+    font-weight: 1000;
+    font-size: 3vh;   
+    border-radius: 15px;
+    border-color: black;
+    border-style: solid;
+}
+.cajaPregunta{
+    margin-top: 10px;
+    height: 25vh;
+    border-radius: 15px;
+    border-color: black;
+    border-style: solid;
+}
+.respuestas{
+    margin-top: 10vh;
+}
+.pregunta{
+    padding-top: 9vh;
+}
+.opciones{
+    margin: 3vh; 
+}
+.btn {
+    background: white;
+    width: 60%;
+    max-width: 550px;
+    padding: 10px;
+    margin: 5px;
+    cursor: pointer;
+    border-radius: 15px;
+    border-color: black;
+    border-style: solid;
+}
+
+.btn:hover{
+    transform: scale(1.05);
+    transition: all 0.5s;
+}
+
+@media only screen and (max-width: 766px) {
+    .fondo-preguntas{
+        background: url(../images/Deportes.jpg);
+    }
+}
+
+@media only screen and (max-width: 500px) {
+}
+
+@media only screen and (max-width: 375px) {
+    .trivia h1{
+        font-weight: 1000;
+        font-size: 5vh;
+    }
+}
+
+@media only screen and (max-width: 214px) {
+}

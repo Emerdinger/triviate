@@ -1,0 +1,112 @@
+*{
+    transition: all 0.3s;
+}
+
+a{
+    text-decoration:none; color: black;
+}
+
+#text-title{
+    height: 100vh;
+    padding-top: 18vh;
+}
+
+#text-title h1{
+    font-weight: 1000;
+    font-size: 60px;
+}
+
+#text-title p{
+    padding-top: 25px;
+    font-weight: 500;
+}
+
+.btn-signUp{
+    padding: 10px;
+    padding-left: 30px;
+    padding-right: 30px;
+}
+
+.btn-signUp:hover{
+    transform: scale(1.15);
+    transition: all 0.3s;
+}
+
+.categories {
+    padding-bottom: 100px;
+}
+
+.t-categories h1{
+    font-size: 45px;
+    font-weight: 700;
+}
+.t-categories p{
+    padding-top: 30px;
+    padding-bottom: 30px;
+    font-weight: 500;
+    font-size: 3vh;
+}
+
+.play-sport:hover{
+    background-color: transparent;
+    transform: scale(1.05);
+    transition: all 0.3s;
+    cursor: pointer;
+}
+
+.icon-sports{
+    margin-top: -50px;
+}
+
+.i-categorie img{
+    width: 100%;
+}
+
+@media only screen and (max-width: 766px) {
+    .icon-sports{
+        margin-top: 0;
+    }
+    .button-category{
+        text-align: center;
+        padding-bottom: 25px;
+    } 
+    #text-title h1{
+        font-weight: 1000;
+        font-size: 50px;
+    }
+}
+
+@media only screen and (max-width: 500px) {
+    #text-title h1{
+        font-weight: 1000;
+        font-size: 45px;
+    }
+}
+
+@media only screen and (max-width: 375px) {
+    #text-title h1{
+        font-weight: 1000;
+        font-size: 40px;
+    }
+    .t-categories h1{
+        font-size: 30px;
+        font-weight: 700;
+    }
+}
+
+@media only screen and (max-width: 214px) {
+    #text-title h1{
+        font-weight: 1000;
+        font-size: 30px;
+    }
+    .t-categories h1{
+        font-size: 15px;
+        font-weight: 700;
+    }
+    .t-categories p{
+        padding-top: 15px;
+        padding-bottom: 15px;
+        font-weight: 500;
+        font-size: 2vh;
+    }
+}
