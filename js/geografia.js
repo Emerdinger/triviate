@@ -1,4 +1,4 @@
-let preguntas = readText("../preguntas/geography.json");
+let preguntas = readText("/triviate/preguntas/geography.json");
 let interprete_pg = JSON.parse(preguntas);
 let pregunta;
 let respuestas;
