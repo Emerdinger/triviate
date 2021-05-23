@@ -1,4 +1,4 @@
-let preguntas = readText("../preguntas/generalKnowledge.json");
+let preguntas = readText("../docs/preguntas/generalKnowledge.json");
 let interprete_pg = JSON.parse(preguntas);
 let pregunta;
 let respuestas;
