@@ -119,6 +119,9 @@ function readText(local_route) {
 function actualizarCuentaAtras() {
     document.getElementById('countdown').innerHTML = tiempo;
     if(tiempo == 0){
+        if (suspender_botones) {
+            return
+        }
         alert(`Has perdido! obtuviste una puntuación de ${puntuacion}!`);
         window.location.reload();
     }else if (correcto == true){
