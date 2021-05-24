@@ -1,9 +1,4 @@
-.fondo-preguntas{
-    background: url(../images/Deportes.jpg);
-    background-repeat: no-repeat;
-    background-size: cover;
-	background-position: center center;
-}
+
 .trivia{
     height: 100vh;
     padding-top: 5vh;

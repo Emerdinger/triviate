@@ -50,13 +50,6 @@
     font-size: 8hv;
     text-shadow: 2px 2px white;
 }
-.h-1{
-    background: url(../images/chara-willy-stand.png);
-    background-repeat: no-repeat;
-    background-size: 100% 100%;
-	background-position: center center;
-    object-fit: cover;
-}
 .h-text{
     padding-top: 5%;
     color: white;
@@ -70,7 +63,7 @@
     padding-top: 10%;
 }
 .r-imagen{
-    background-image: url(../images/character-crown.png);
+    background-image: url(../images/hamster-sin-fondo.png);
     background-repeat: no-repeat;
     background-size: 100% 100%;
     background-position: center; 
@@ -92,21 +85,14 @@
 }
 
 @media only screen and (max-width: 766px) {
-    .howToPlay{
-        height: 80vh;
-    }
-    .h-tamano{
-        height: 70vh;
-    }
-    .h-1{
-        align-items: center;
-        height: 50vh;
-        width: 50vw;
-        margin-left: 20%;
-    }
     .f-emerlive{
         text-align: center;
         padding-bottom: 30px;
+    }
+    .h-text p{
+        font-weight: 1000;
+        font-size: 6hv;
+        text-align: center;
     }
 }
 @media only screen and (max-width: 500px) {
@@ -121,20 +107,9 @@
         font-weight: 1000;
         color: gray;
     }
-    .howToPlay{
-        height: 80vh;
-    }
-    .h-tamano{
-        height: 70vh;
-    }
-    .h-1{
-        height: 30vh;
-        width: 30vw;
-        margin-left: 38%;
-    }
     .h-text p{
         font-weight: 1000;
-        font-size: 6hv;
+        font-size: 7hv;
         text-align: center;
     }
 
@@ -161,17 +136,6 @@
         text-align: center;
         font-weight: 1000;
         color: gray;
-    }
-    .howToPlay{
-        height: 80vh;
-    }
-    .h-tamano{
-        height: 70vh;
-    }
-    .h-1{
-        height: 25vh;
-        width: 25vw;
-        margin-left: 38%;
     }
     .h-text p{
         font-weight: 1000;
