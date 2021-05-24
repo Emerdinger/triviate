@@ -6,6 +6,7 @@ var tiempo = 15;
 var correct = new Audio('/triviate/sounds/correct.mp3');
 var pocotime = new Audio('/triviate/sounds/pocotime.mp3');
 var incorrect = new Audio('/triviate/sounds/incorrect.mp3');
+pocotime.muted = true;
 let pregunta;
 let respuestas;
 let btn_correspondiente = [select_id("btn1"), select_id("btn2"), select_id("btn3"), select_id("btn4")];
@@ -136,6 +137,7 @@ function actualizarCuentaAtras() {
         return;
     }else{
         if(tiempo <= 4){
+            pocotime.muted = false;
             pocotime.play()
         }
         tiempo -=1;
