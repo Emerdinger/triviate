@@ -1,5 +1,5 @@
 window.onload = actualizarCuentaAtras;
-let preguntas = readText("../preguntas/geography.json");
+let preguntas = readText("/triviate/preguntas/geography.json");
 let interprete_pg = JSON.parse(preguntas);
 var correcto = false;
 var tiempo = 15;
