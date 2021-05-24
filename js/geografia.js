@@ -1,3 +1,6 @@
+window.onload = actualizarCuentaAtras;
+var correcto = false;
+var tiempo = 15;
 let preguntas = readText("/triviate/preguntas/geography.json");
 let interprete_pg = JSON.parse(preguntas);
 let pregunta;
@@ -61,9 +64,13 @@ function responder(i) {
     if (posibles_respuestas[i] == pregunta.correct_answer) {
         btn_correspondiente[i].style.background = 'lightgreen';
         puntuacion++
+        correcto = true;
         setTimeout(() => {
             reiniciar()
             suspender_botones = false
+            tiempo = 15;
+            correcto = false;
+            actualizarCuentaAtras();
         }, 3000);
     } else {
         btn_correspondiente[i].style.background = 'pink';
@@ -107,4 +114,19 @@ function readText(local_route) {
     }
 
     return text;
+}
+
+// Funcion para hacer la cuenta hacia atras
+
+function actualizarCuentaAtras() {
+    document.getElementById('countdown').innerHTML = tiempo;
+    if(tiempo == 0){
+        alert(`Has perdido! obtuviste una puntuación de ${puntuacion}!`);
+        window.location.reload();
+    }else if (correcto == true){
+        return;
+    }else{
+        tiempo -=1;
+        setTimeout("actualizarCuentaAtras()",1000);
+    }
 }
