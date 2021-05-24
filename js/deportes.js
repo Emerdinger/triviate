@@ -1,6 +1,9 @@
 window.onload = actualizarCuentaAtras;
 var correcto = false;
 var tiempo = 15;
+var correct = new Audio('../sounds/correct.mp3');
+var pocotime = new Audio('../sounds/pocotime.mp3');
+var incorrect = new Audio('../sounds/incorrect.mp3');
 let preguntas = readText("/triviate/preguntas/sports.json");
 let interprete_pg = JSON.parse(preguntas);
 let pregunta;
@@ -64,6 +67,7 @@ function responder(i) {
     if (posibles_respuestas[i] == pregunta.correct_answer) {
         btn_correspondiente[i].style.background = 'lightgreen';
         puntuacion++
+        correct.play();
         correcto = true
         setTimeout(() => {
             reiniciar()
@@ -74,6 +78,7 @@ function responder(i) {
         }, 3000);
     } else {
         btn_correspondiente[i].style.background = 'pink';
+        incorrect.play();
         setTimeout(() => {
             alert(`Has perdido! obtuviste una puntuación de ${puntuacion}!`);
             window.location.reload();
@@ -122,11 +127,15 @@ function actualizarCuentaAtras() {
         if (suspender_botones) {
             return
         }
+        incorrect.play();
         alert(`Has perdido! obtuviste una puntuación de ${puntuacion}!`);
         window.location.reload();
     }else if (correcto == true){
         return;
     }else{
+        if(tiempo <= 4){
+            pocotime.play()
+        }
         tiempo -=1;
         setTimeout("actualizarCuentaAtras()",1000);
     }

@@ -1,8 +1,11 @@
 window.onload = actualizarCuentaAtras;
+let preguntas = readText("../preguntas/geography.json");
+let interprete_pg = JSON.parse(preguntas);
 var correcto = false;
 var tiempo = 15;
-let preguntas = readText("/triviate/preguntas/geography.json");
-let interprete_pg = JSON.parse(preguntas);
+var correct = new Audio('../sounds/correct.mp3');
+var pocotime = new Audio('../sounds/pocotime.mp3');
+var incorrect = new Audio('../sounds/incorrect.mp3');
 let pregunta;
 let respuestas;
 let btn_correspondiente = [select_id("btn1"), select_id("btn2"), select_id("btn3"), select_id("btn4")];
@@ -63,6 +66,7 @@ function responder(i) {
 
     if (posibles_respuestas[i] == pregunta.correct_answer) {
         btn_correspondiente[i].style.background = 'lightgreen';
+        correct.play();
         puntuacion++
         correcto = true;
         setTimeout(() => {
@@ -74,6 +78,7 @@ function responder(i) {
         }, 3000);
     } else {
         btn_correspondiente[i].style.background = 'pink';
+        incorrect.play();
         setTimeout(() => {
             alert(`Has perdido! obtuviste una puntuación de ${puntuacion}!`);
             window.location.reload();
@@ -124,11 +129,15 @@ function actualizarCuentaAtras() {
         if (suspender_botones) {
             return
         }
+        incorrect.play();
         alert(`Has perdido! obtuviste una puntuación de ${puntuacion}!`);
         window.location.reload();
     }else if (correcto == true){
         return;
     }else{
+        if(tiempo <= 4){
+            pocotime.play()
+        }
         tiempo -=1;
         setTimeout("actualizarCuentaAtras()",1000);
     }
