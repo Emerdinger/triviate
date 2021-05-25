@@ -25,9 +25,36 @@ signupForm.addEventListener('submit', (e) => {
     const password = document.querySelector('#password').value;
     
     auth.createUserWithEmailAndPassword(email, password).then(() =>{
-        alert("Usuario creado correctamente");
-        window.location.assign('signin.html');
+        sendVerificationEmail();
+        
     }).catch(error => {
         console.error(error);
     });
 });
+
+//Se envia un email de verificacion
+const sendVerificationEmail = () => {
+    auth.currentUser.sendEmailVerification().then(() => {
+        alert("Usuario creado correctamente, por favor revise su email para activar su cuenta");
+    })
+}
+
+//Verificar si el usuario esta logeado para enviarlo a categorias o dejarlo
+
+auth.onAuthStateChanged(user => {
+    if(user){
+        cheackVerified(user);
+    } 
+})
+
+//quitar la sesion si no esta verificado el email
+
+const cheackVerified = user => {
+    if(user.emailVerified == false){
+        auth.signOut();
+        msgNoVerificado = 1;
+        window.location.assign('signin.html');
+    }else if(user.emailVerified == true){
+        window.location.assign('categories.html');
+    }
+}

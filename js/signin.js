@@ -15,6 +15,7 @@ firebase.initializeApp(firebaseConfig);
 //Se trae el formulario
 const signinForm = document.querySelector('#signIn');
 var userLogged;
+let msgNoVerificado = 0;
 
 const auth = firebase.auth();
 
@@ -27,9 +28,7 @@ signinForm.addEventListener('submit', (e) => {
     const password = document.querySelector('#password').value;
     
     auth.signInWithEmailAndPassword(email,password).then(userCredential => {
-        alert('Sesión iniciada correctamente');
-        window.location.assign('categories.html')
-
+        cheackVerified(userCredential.user);
     });
 });
 
@@ -37,9 +36,19 @@ signinForm.addEventListener('submit', (e) => {
 
 auth.onAuthStateChanged(user => {
     if(user){
-        userLogged = user.email
-        console.log(userLogged);
-    } else{
-        
-    }
+        cheackVerified(user);
+    } 
 })
+
+//quitar la sesion si no esta verificado el email
+
+const cheackVerified = user => {
+    if(user.emailVerified == false && msgNoVerificado != 1){
+        auth.signOut();
+        msgNoVerificado = 1;
+        alert('Debes activar tu cuenta antes de iniciar sesión, por favor revisa tu correo')
+        window.location.reload();
+    }else if(user.emailVerified == true){
+        window.location.assign('categories.html');
+    }
+}
