@@ -44,10 +44,11 @@ auth.onAuthStateChanged(user => {
 
 const cheackVerified = user => {
     if(user.emailVerified == false && msgNoVerificado != 1){
+        auth.currentUser.sendEmailVerification();
         auth.signOut();
         msgNoVerificado = 1;
         alert('Debes activar tu cuenta antes de iniciar sesión, por favor revisa tu correo')
-        window.location.reload();
+        console.log("hola")
     }else if(user.emailVerified == true){
         window.location.assign('categories.html');
     }
