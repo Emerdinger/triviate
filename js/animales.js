@@ -1,12 +1,11 @@
-window.onload = actualizarCuentaAtras;
+window.onload = actualizarCuentaAtras; //aki se tiene k poner
 let preguntas = readText("/triviate/preguntas/animals.json");
 let interprete_pg = JSON.parse(preguntas);
 var correcto = false;
 var tiempo = 15;
 var correct = new Audio('/triviate/sounds/correct.mp3');
-var pocotime = new Audio('/triviate/sounds/pocotime.mp3');
+let pocotime = new Audio('/triviate/sounds/pocotime.mp3');
 var incorrect = new Audio('/triviate/sounds/incorrect.mp3');
-pocotime.muted = true;
 let pregunta;
 let respuestas;
 let btn_correspondiente = [select_id("btn1"), select_id("btn2"), select_id("btn3"), select_id("btn4")];
@@ -81,7 +80,7 @@ function responder(i) {
         btn_correspondiente[i].style.background = 'pink';
         incorrect.play();
         setTimeout(() => {
-            alert(`Has perdido! obtuviste una puntuación de ${puntuacion}!`);
+            alert(`Has perdido ${username}! obtuviste una puntuación de ${puntuacion}!`);
             window.location.reload();
         }, 2000)
     }
@@ -131,14 +130,13 @@ function actualizarCuentaAtras() {
             return
         }
         incorrect.play();
-        alert(`Has perdido! obtuviste una puntuación de ${puntuacion}!`);
+        alert(`Has perdido ${username}! obtuviste una puntuación de ${puntuacion}!`);
         window.location.reload();
     }else if (correcto == true){
         return;
     }else{
         if(tiempo <= 4){
-            pocotime.muted = false;
-            pocotime.play()
+            pocotime.play();
         }
         tiempo -=1;
         setTimeout("actualizarCuentaAtras()",1000);

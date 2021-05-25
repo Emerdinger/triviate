@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="./css/navbar.css">
+    <link rel="stylesheet" href="./css/signup.css">
+    <link rel="stylesheet" href="./css/bootstrap.min.css">
+    <title>Document</title>
+</head>
+
+<body class="bg-primary">
+    <nav class="navbar navbar-expand-lg navbar-light bg-transparent" id="navbar-Color">
+        <div class="container-fluid" id="navBar-Triviate">
+            <a href="index.html" id="triviate" class="navbar-brand mb-0 h1">Triviate</a>
+            <button id="nav-button" class="navbar-toggler" type="button" data-bs-toggle="collapse"
+                data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false"
+                aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav ms-auto">
+                    <li class="navbar-item">
+                        <a href="index.html" class="nav-link active" id="item" aria-current="page">Inicio</a>
+                    </li>
+                    <li class="navbar-item">
+                        <a href="#comoSeJuega" class="nav-link" id="item">¿Como se juega?</a>
+                    </li>
+                    <li class="navbar-item">
+                        <a href="#objetivo" class="nav-link" id="item">Objetivo</a>
+                    </li>
+                    <li class="navbar-item">
+                        <a href="categories.html" class="nav-link" id="item">Categorias</a>
+                    </li>
+                    <li class="navbar-item">
+                        <a href="#" class="nav-link btn btn-light">Soporte</a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Sign Up form -->
+
+    <div class="signup text-center">
+        <div class="container form">
+            <h1 class="pb-4">Registro</h1>
+            <form action="" id="signUp" class="bg-light">
+                <div class="mb-3">
+                    <label class="form-label" for="exampleInputEmail1">Ingrese su correo electornico</label>
+                    <input type="email" class="form-control" id="email" placeholder="Email">
+                </div>
+                <div class="mb-3">
+                    <label class="form-label" for="userPassword">Ingrese su contraseña</label>
+                    <input type="password" id="password" class="form-control" placeholder="Password">
+                </div>
+                <button type="submit" class="btn btn-primary">Enviar</button>
+            </form>
+            <p class="message">¿Ya tienes una cuenta? <a href="signin.html">Inicia sesión</a></p>
+        </div>
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.2/dist/umd/popper.min.js"
+        integrity="sha384-IQsoLXl5PILFhosVNubq5LC7Qb9DXgDA9i+tQ8Zj3iwWAwPtgFTxbJ8NT4GN1R8p"
+        crossorigin="anonymous"></script>
+    <script src="./js/bootstrap.min.js"></script>
+    <!-- The core Firebase JS SDK is always required and must be listed first -->
+    <script src="https://www.gstatic.com/firebasejs/8.6.2/firebase-app.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/8.6.2/firebase-auth.js"></script>
+    <script src="./js/signup.js"></script>
+</body>
+
+</html>

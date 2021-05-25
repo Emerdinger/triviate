@@ -33,6 +33,9 @@
                     <li class="navbar-item">
                         <a id="item2" href="#" class="nav-link btn btn-light">Soporte</a>
                     </li>
+                    <li class="navbar-item">
+                        <a href="" class="nav-link" id="logout" style="display: none;">Salir</a>
+                    </li>
                 </ul>
             </div>
         </div>
@@ -45,7 +48,8 @@
             <h1>se basa en hacer preguntas</h1>
             <h1>pero no contestar ninguna</h1>
             <p>- Brian O'Noalan.</p>
-            <button class="btn btn-danger btn-signUp"><a style="color: white;" href="#">Registrate</a></button>
+            <button class="btn btn-danger btn-signUp" id="inicia"><a style="color: white;" href="signin.html">Inicia Sesión</a></button>
+            <p id="welcome"></p>
         </div>
     </div> 
     
@@ -232,5 +236,9 @@
         integrity="sha384-IQsoLXl5PILFhosVNubq5LC7Qb9DXgDA9i+tQ8Zj3iwWAwPtgFTxbJ8NT4GN1R8p"
         crossorigin="anonymous"></script>
     <script src="./js/bootstrap.min.js"></script>
+    <!-- The core Firebase JS SDK is always required and must be listed first -->
+    <script src="https://www.gstatic.com/firebasejs/8.6.2/firebase-app.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/8.6.2/firebase-auth.js"></script>
+    <script src="./js/logout.js"></script>
 </body>
 </html>

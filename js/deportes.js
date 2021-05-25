@@ -80,7 +80,7 @@ function responder(i) {
         btn_correspondiente[i].style.background = 'pink';
         incorrect.play();
         setTimeout(() => {
-            alert(`Has perdido! obtuviste una puntuación de ${puntuacion}!`);
+            alert(`Has perdido ${username}! obtuviste una puntuación de ${puntuacion}!`);
             window.location.reload();
         }, 2000)
     }
@@ -128,7 +128,7 @@ function actualizarCuentaAtras() {
             return
         }
         incorrect.play();
-        alert(`Has perdido! obtuviste una puntuación de ${puntuacion}!`);
+        alert(`Has perdido ${username}! obtuviste una puntuación de ${puntuacion}!`);
         window.location.reload();
     }else if (correcto == true){
         return;

@@ -7,10 +7,12 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="./css/bootstrap.min.css">
     <link rel="stylesheet" href="./css/trivia.css">
+    <link rel="shortcut icon" href="./images/animals.png">
     <title>Animales</title>
 </head>
 
 <body>
+    <audio src="./sounds/pocotime.mp3" allow="autoplay" id="poco-time"></audio>
     <div class="fondo-preguntas" style="background: #181015 url(./images/bg-animals.jpg) no-repeat center center fixed; background-size: cover;">
         <div class="container trivia">
             <h1 class="text-center">Triviate</h1>
@@ -34,6 +36,10 @@
         </div>
     </div>
 
+    <!-- The core Firebase JS SDK is always required and must be listed first -->
+    <script src="https://www.gstatic.com/firebasejs/8.6.2/firebase-app.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/8.6.2/firebase-auth.js"></script>
+    <script src="./js/games.js"></script>
     <!-- Preguntas -->
     <script src="./js/animales.js"></script>
 </body>
