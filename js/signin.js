@@ -47,8 +47,7 @@ const cheackVerified = user => {
         auth.currentUser.sendEmailVerification();
         auth.signOut();
         msgNoVerificado = 1;
-        alert('Debes activar tu cuenta antes de iniciar sesión, por favor revisa tu correo')
-        console.log("hola")
+        alert('Debes activar tu cuenta antes de iniciar sesión, por favor revisa tu correo');
     }else if(user.emailVerified == true){
         window.location.assign('categories.html');
     }
