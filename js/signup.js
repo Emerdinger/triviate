@@ -23,10 +23,9 @@ signupForm.addEventListener('submit', (e) => {
 
     const email = document.querySelector('#email').value;
     const password = document.querySelector('#password').value;
-    
-    auth.createUserWithEmailAndPassword(email, password).then(() =>{
-        alert('Usuario creado correctamente, por favor verifique su cuenta con su correo');
-        
+
+    auth.createUserWithEmailAndPassword(email, password).then(() => {
+
     }).catch(error => {
         console.error(error);
     });
@@ -34,21 +33,33 @@ signupForm.addEventListener('submit', (e) => {
 
 //Verificar si el usuario esta logeado para enviarlo a categorias o dejarlo
 
+
 auth.onAuthStateChanged(user => {
-    if(user){
+    if (user) {
         cheackVerified(user);
-    } 
+    }
 })
+
 
 //quitar la sesion si no esta verificado el email
 
 const cheackVerified = user => {
-    if(user.emailVerified == false){
+    if (user.emailVerified == false) {
         auth.currentUser.sendEmailVerification();
         auth.signOut();
         msgNoVerificado = 1;
-        window.location.assign('signin.html');
-    }else if(user.emailVerified == true){
+        Swal.fire({
+            icon: 'success',
+            title: 'Registrado Correctamente',
+            text: 'Debes activar tu cuenta para iniciar sesión',
+            confirmButtonText: 'Inicia Sesión',
+            backdrop: true
+
+        }).then(() => {
+            window.location.assign('signin.html');
+        })
+        
+    } else if (user.emailVerified == true) {
         window.location.assign('categories.html');
     }
 }

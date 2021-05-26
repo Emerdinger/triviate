@@ -26,8 +26,8 @@ signinForm.addEventListener('submit', (e) => {
 
     const email = document.querySelector('#email').value;
     const password = document.querySelector('#password').value;
-    
-    auth.signInWithEmailAndPassword(email,password).then(userCredential => {
+
+    auth.signInWithEmailAndPassword(email, password).then(userCredential => {
         cheackVerified(userCredential.user);
     });
 });
@@ -35,20 +35,45 @@ signinForm.addEventListener('submit', (e) => {
 //Se verifica el estado del usuario loggeado o desloggeado
 
 auth.onAuthStateChanged(user => {
-    if(user){
+    if (user) {
         cheackVerified(user);
-    } 
+    }
 })
 
 //quitar la sesion si no esta verificado el email
 
 const cheackVerified = user => {
-    if(user.emailVerified == false && msgNoVerificado != 1){
+    if (user.emailVerified == false && msgNoVerificado != 1) {
         auth.currentUser.sendEmailVerification();
         auth.signOut();
         msgNoVerificado = 1;
-        alert('Debes activar tu cuenta antes de iniciar sesión, por favor revisa tu correo');
-    }else if(user.emailVerified == true){
-        window.location.assign('categories.html');
+        Swal.fire({
+            icon: 'question',
+            title: 'Correo no verificado',
+            text: 'Debes activar tu cuenta antes de iniciar sesión, por favor revisa tu correo',
+            confirmButtonText: 'Volver',
+            backdrop: true
+            
+        }).then(() => {window.location.reload()});
+    } else if (user.emailVerified == true) {
+        
+        const Toast = Swal.mixin({
+            toast: true,
+            position: 'top-end',
+            showConfirmButton: false,
+            timer: 3000,
+            timerProgressBar: true,
+            didOpen: (toast) => {
+              toast.addEventListener('mouseenter', Swal.stopTimer)
+              toast.addEventListener('mouseleave', Swal.resumeTimer)
+            }
+          })
+          
+        Toast.fire({
+            icon: 'success',
+            title: `Bienvenido ${user.email}, lo estamos redireccionando...`
+         }).then(() => {
+             window.location.assign('categories.html');
+         })
     }
 }

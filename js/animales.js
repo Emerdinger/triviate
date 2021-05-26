@@ -80,8 +80,17 @@ function responder(i) {
         btn_correspondiente[i].style.background = 'pink';
         incorrect.play();
         setTimeout(() => {
-            alert(`Has perdido ${username}! obtuviste una puntuación de ${puntuacion}!`);
-            window.location.reload();
+            correcto = true;
+            Swal.fire({
+                icon: 'error',
+                title: 'Perdiste!',
+                text: `Has perdido ${username}! Obtuviste una puntuación de ${puntuacion}!`,
+                confirmButtonText: 'Volver a intentar',
+                backdrop: true
+                
+            }).then(() => {
+                window.location.reload();
+            })
         }, 2000)
     }
 }
@@ -125,20 +134,29 @@ function readText(local_route) {
 
 function actualizarCuentaAtras() {
     document.getElementById('countdown').innerHTML = tiempo;
-    if(tiempo == 0){
+    if (tiempo == 0) {
         if (suspender_botones) {
             return
         }
         incorrect.play();
-        alert(`Has perdido ${username}! obtuviste una puntuación de ${puntuacion}!`);
-        window.location.reload();
-    }else if (correcto == true){
+        Swal.fire({
+            icon: 'error',
+            title: 'Perdiste!',
+            text: `Has perdido ${username}! Obtuviste una puntuación de ${puntuacion}!`,
+            confirmButtonText: 'Volver a intentar'
+        }).then(() => {
+            window.location.reload();
+        })
+    } else if (correcto == true) {
         return;
-    }else{
-        if(tiempo <= 4){
-            pocotime.play();
+    } else {
+        if (tiempo <= 4) {
+            if (suspender_botones) {
+                return
+            }
+            pocotime.play()
         }
-        tiempo -=1;
-        setTimeout("actualizarCuentaAtras()",1000);
+        tiempo -= 1;
+        setTimeout("actualizarCuentaAtras()", 1000);
     }
 }
