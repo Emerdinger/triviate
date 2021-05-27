@@ -1,10 +1,10 @@
 window.onload = actualizarCuentaAtras;
 var correcto = false;
 var tiempo = 15;
-var correct = new Audio('../sounds/correct.mp3');
-var pocotime = new Audio('../sounds/pocotime.mp3');
-var incorrect = new Audio('../sounds/incorrect.mp3');
-let preguntas = readText("../preguntas/sports.json");
+var correct = new Audio('/triviate/sounds/correct.mp3');
+var pocotime = new Audio('/triviate/sounds/pocotime.mp3');
+var incorrect = new Audio('/triviate/sounds/incorrect.mp3');
+let preguntas = readText("/triviate/preguntas/sports.json");
 let interprete_pg = JSON.parse(preguntas);
 let pregunta;
 let respuestas;
