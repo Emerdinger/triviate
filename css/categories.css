@@ -49,6 +49,7 @@ a{
 
 .play-sport:hover{
     background-color: transparent;
+    color: black;
     transform: scale(1.05);
     transition: all 0.3s;
     cursor: pointer;

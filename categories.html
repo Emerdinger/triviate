@@ -11,7 +11,7 @@
         integrity="sha384-50oBUHEmvpQ+1lW4y57PTFmhCaXp0ML5d60M1M7uH2+nqUivzIebhndOJK28anvf" crossorigin="anonymous">
     <title>Categorias</title>
 </head>
-<body>
+<body class="categories-page">
     <nav class="navbar navbar-expand-lg navbar-light bg-transparent" id="navbar-Color2">
         <div class="container-fluid" id="navBar-Triviate">
             <a href="index.html" id="triviate2" class="navbar-brand mb-0 h1">Triviate</a>
@@ -22,22 +22,30 @@
             <div class="collapse navbar-collapse" id="navbarNav">
                 <ul class="navbar-nav ms-auto">
                     <li class="navbar-item">
-                        <a href="index.html" class="nav-link active" id="item2" aria-current="page">Inicio</a>
+                        <a href="index.html" class="nav-link active nav-home" id="item2" aria-current="page">Inicio</a>
                     </li>
                     <li class="navbar-item">
-                        <a href="index.html#comoSeJuega" class="nav-link" id="item2">¿Como se juega?</a>
+                        <a href="index.html#comoSeJuega" class="nav-link nav-howtoplay" id="item2">¿Como se juega?</a>
                     </li>
                     <li class="navbar-item">
-                        <a href="index.html#objetivo" class="nav-link" id="item2">Objetivo</a>
+                        <a href="index.html#objetivo" class="nav-link nav-objetive" id="item2">Objetivo</a>
                     </li>
                     <li class="navbar-item">
-                        <a href="categories.html" class="nav-link" id="item2">Jugar</a>
+                        <a href="categories.html" class="nav-link nav-play" id="item2">Jugar</a>
                     </li>
                     <li class="navbar-item">
-                        <a id="item2" href="#" class="nav-link btn btn-light">Soporte</a>
+                        <a id="item2" href="#" class="nav-link btn btn-light nav-support">Soporte</a>
                     </li>
                     <li class="navbar-item">
-                        <a href="" class="nav-link" id="logout" style="display: none;">Salir</a>
+                        <a href="" class="nav-link nav-logout" id="logout" style="display: none;">Salir</a>
+                    </li>
+                    <li class="nav-item dropdown">
+                        <a id="item2" href="#" class="nav-link dropdown-toggle s-language" id="navbarDropdownMenuLink" role="button"
+                            data-bs-toggle="dropdown" aria-expanded="false">ES<b class="caret"></b></a>
+                        <ul class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
+                            <li><a onclick="enSwtich('es')" class="dropdown-item">Español</a></li>
+                            <li><a onclick="enSwtich('en')" class="dropdown-item">English</a></li>
+                        </ul>
                     </li>
                 </ul>
             </div>
@@ -47,11 +55,11 @@
     <!-- Main title -->
     <div id="text-title">
         <div class="container text-center">
-            <h1>El principio básico de la sabiduría</h1>
-            <h1>se basa en hacer preguntas</h1>
-            <h1>pero no contestar ninguna</h1>
+            <h1 class="t-title-1">El principio básico de la sabiduría</h1>
+            <h1 class="t-title-2">se basa en hacer preguntas</h1>
+            <h1 class="t-title-3">pero no contestar ninguna</h1>
             <p>- Brian O'Noalan.</p>
-            <button class="btn btn-danger btn-signUp" id="inicia"><a style="color: white;" href="signin.html">Inicia Sesión</a></button>
+            <button class="btn btn-danger btn-signUp" id="inicia"><a class="sesion" style="color: white;" href="signin.html">Inicia Sesión</a></button>
             <p id="welcome"></p>
         </div>
     </div> 
@@ -63,12 +71,12 @@
             <div class="row">
                 <div class="col-md-6 t-categories">
                     <div>
-                        <b>Deportes</b>
+                        <b class="sports">Deportes</b>
                     </div>
-                    <h1>Un campeón no tiene miedo de perder.</h1>
-                    <p>Demuestra cuanto sabes sobre deportes intentando contestar todas nuestras preguntas sin equivocarte!</p>
+                    <h1 class="s-title">Un campeón no tiene miedo de perder.</h1>
+                    <p class="s-text">Demuestra cuanto sabes sobre deportes intentando contestar todas nuestras preguntas sin equivocarte!</p>
                     <div class="button-category">
-                        <button class="btn btn-outline-dark play-sport"><a href="deportes.html">Juega Deportes</a></button>
+                        <button class="btn btn-outline-dark play-sport"><a class="s-play" href="deportes.html">Jugar</a></button>
                     </div>
                 </div>
                 <div class="col-md-6 i-categorie">
@@ -88,12 +96,12 @@
                 </div>
                 <div class="col-md-6 t-categories">
                     <div>
-                        <b>Conocimiento General</b>
+                        <b class="knowledge">Conocimiento General</b>
                     </div>
-                    <h1>El conocimiento no es suficiente; debemos aplicarlo.</h1>
-                    <p>Demuestra cuanto sabes sobre conocimiento general intentando contestar todas nuestras preguntas sin equivocarte!</p>
+                    <h1 class="k-title">El conocimiento no es suficiente; debemos aplicarlo.</h1>
+                    <p class="k-text">Demuestra cuanto sabes sobre conocimiento general intentando contestar todas nuestras preguntas sin equivocarte!</p>
                     <div class="button-category">
-                        <button class="btn btn-outline-dark play-sport"><a href="conocimiento.html">Juega Conocimiento General</a></button>
+                        <button class="btn btn-outline-dark play-sport"><a class="k-play" href="conocimiento.html">Jugar</a></button>
                     </div>
                 </div>
             </div>
@@ -107,12 +115,12 @@
             <div class="row">
                 <div class="col-md-6 t-categories">
                     <div>
-                        <b>Ciencia y Naturaleza</b>
+                        <b class="science">Ciencia y Naturaleza</b>
                     </div>
-                    <h1>La ciencia, está hecha de errores, pero errores útiles.</h1>
-                    <p>Demuestra cuanto sabes sobre ciencia y naturaleza intentando contestar todas nuestras preguntas sin equivocarte!</p>
+                    <h1 class="sn-title">La ciencia, está hecha de errores, pero errores útiles.</h1>
+                    <p class="sn-text">Demuestra cuanto sabes sobre ciencia y naturaleza intentando contestar todas nuestras preguntas sin equivocarte!</p>
                     <div class="button-category">
-                        <button class="btn btn-outline-dark play-sport"><a href="ciencia.html">Juega Ciencia y Naturaleza</a></button>
+                        <button class="btn btn-outline-dark play-sport"><a class="sn-play" href="ciencia.html">Jugar</a></button>
                     </div>
                 </div>
                 <div class="col-md-6 i-categorie">
@@ -132,12 +140,12 @@
                 </div>
                 <div class="col-md-6 t-categories">
                     <div>
-                        <b>Arte</b>
+                        <b class="art">Arte</b>
                     </div>
-                    <h1>El arte no es lo que ves, es lo que haces a otros ver.</h1>
-                    <p>Demuestra cuanto sabes sobre arte intentando contestar todas nuestras preguntas sin equivocarte!</p>
+                    <h1 class="a-title">El arte no es lo que ves, es lo que haces a otros ver.</h1>
+                    <p class="a-text">Demuestra cuanto sabes sobre arte intentando contestar todas nuestras preguntas sin equivocarte!</p>
                     <div class="button-category">
-                        <button class="btn btn-outline-dark play-sport"><a href="arte.html">Juega Arte</a></button>
+                        <button class="btn btn-outline-dark play-sport"><a class="a-play" href="arte.html">Jugar</a></button>
                     </div>
                 </div>
             </div>
@@ -151,12 +159,12 @@
             <div class="row">
                 <div class="col-md-6 t-categories">
                     <div>
-                        <b>Animales</b>
+                        <b class="animals">Animales</b>
                     </div>
-                    <h1>La lealtad de un animal no conoce límites</h1>
-                    <p>Demuestra cuanto sabes sobre animales intentando contestar todas nuestras preguntas sin equivocarte!</p>
+                    <h1 class="an-title">La lealtad de un animal no conoce límites</h1>
+                    <p class="an-text">Demuestra cuanto sabes sobre animales intentando contestar todas nuestras preguntas sin equivocarte!</p>
                     <div class="button-category">
-                        <button class="btn btn-outline-dark play-sport"><a href="animales.html">Juega Animales</a></button>
+                        <button class="btn btn-outline-dark play-sport"><a class="an-play" href="animales.html">Jugar</a></button>
                     </div>
                 </div>
                 <div class="col-md-6 i-categorie">
@@ -176,12 +184,12 @@
                 </div>
                 <div class="col-md-6 t-categories">
                     <div>
-                        <b>Geografía</b>
+                        <b class="geography">Geografía</b>
                     </div>
-                    <h1>El que busca el cielo en la tierra se ha dormido en clase de geografía.</h1>
-                    <p>Demuestra cuanto sabes sobre geografía intentando contestar todas nuestras preguntas sin equivocarte!</p>
+                    <h1 class="g-title">El que busca el cielo en la tierra se ha dormido en clase de geografía.</h1>
+                    <p class="g-text">Demuestra cuanto sabes sobre geografía intentando contestar todas nuestras preguntas sin equivocarte!</p>
                     <div class="button-category">
-                        <button class="btn btn-outline-dark play-sport"><a href="geografia.html">Juega Geografia</a></button>
+                        <button class="btn btn-outline-dark play-sport"><a class="g-play" href="geografia.html">Jugar</a></button>
                     </div>
                 </div>
             </div>
@@ -226,7 +234,7 @@
             <div class="container">
                 <div class="row">
                     <div class="col-md-12 pt-3 pb-1" style="color: white;">
-                        <p>CONDICIONES DE SERVICIO | POLÍTICA DE PRIVACIDAD | © 2018 EMERLIVE. TODOS LOS DERECHOS RESERVADOS.</p>
+                        <p class="conditions">CONDICIONES DE SERVICIO | POLÍTICA DE PRIVACIDAD | © 2018 EMERLIVE. TODOS LOS DERECHOS RESERVADOS.</p>
                     </div>
                 </div>
             </div>
@@ -243,5 +251,6 @@
     <script src="https://www.gstatic.com/firebasejs/8.6.2/firebase-app.js"></script>
     <script src="https://www.gstatic.com/firebasejs/8.6.2/firebase-auth.js"></script>
     <script src="./js/logout.js"></script>
+    <script src="./js/language.js"></script>
 </body>
 </html>

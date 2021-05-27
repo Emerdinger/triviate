@@ -11,7 +11,7 @@
     <title>Document</title>
 </head>
 
-<body class="bg-primary">
+<body class="bg-primary login-page">
     <nav class="navbar navbar-expand-lg navbar-light bg-transparent" id="navbar-Color">
         <div class="container-fluid" id="navBar-Triviate">
             <a href="index.html" id="triviate" class="navbar-brand mb-0 h1">Triviate</a>
@@ -23,19 +23,27 @@
             <div class="collapse navbar-collapse" id="navbarNav">
                 <ul class="navbar-nav ms-auto">
                     <li class="navbar-item">
-                        <a href="index.html" class="nav-link active" id="item" aria-current="page">Inicio</a>
+                        <a href="index.html" class="nav-link active nav-home" id="item" aria-current="page">Inicio</a>
                     </li>
                     <li class="navbar-item">
-                        <a href="index.html#comoSeJuega" class="nav-link" id="item">¿Como se juega?</a>
+                        <a href="index.html#comoSeJuega" class="nav-link nav-howtoplay" id="item">¿Como se juega?</a>
                     </li>
                     <li class="navbar-item">
-                        <a href="index.html#objetivo" class="nav-link" id="item">Objetivo</a>
+                        <a href="index.html#objetivo" class="nav-link nav-objetive" id="item">Objetivo</a>
                     </li>
                     <li class="navbar-item">
-                        <a href="categories.html" class="nav-link" id="item">Jugar</a>
+                        <a href="categories.html" class="nav-link nav-play" id="item">Jugar</a>
                     </li>
                     <li class="navbar-item">
-                        <a href="#" class="nav-link btn btn-light">Soporte</a>
+                        <a href="#" class="nav-link btn btn-light nav-support">Soporte</a>
+                    </li>
+                    <li class="nav-item dropdown">
+                        <a id="item" href="#" class="nav-link dropdown-toggle s-language" id="navbarDropdownMenuLink" role="button"
+                            data-bs-toggle="dropdown" aria-expanded="false">ES<b class="caret"></b></a>
+                        <ul class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
+                            <li><a onclick="enSwtich('es')" class="dropdown-item">Español</a></li>
+                            <li><a onclick="enSwtich('en')" class="dropdown-item">English</a></li>
+                        </ul>
                     </li>
                 </ul>
             </div>
@@ -49,16 +57,17 @@
             <h1 class="pb-4">Login</h1>
             <form action="" id="signIn" class="bg-light">
                 <div class="mb-3">
-                    <label class="form-label" for="exampleInputEmail1">Ingrese su correo electornico</label>
+                    <label class="form-label l-email" for="exampleInputEmail1">Ingrese su correo electornico</label>
                     <input type="email" class="form-control" id="email" placeholder="Email">
                 </div>
                 <div class="mb-3">
-                    <label class="form-label" for="userPassword">Ingrese su contraseña</label>
+                    <label class="form-label l-password" for="userPassword">Ingrese su contraseña</label>
                     <input type="password" id="password" class="form-control" placeholder="Password">
                 </div>
-                <button type="submit" class="btn btn-primary">Enviar</button>
+                <button type="submit" class="btn btn-primary l-send">Entrar</button>
             </form>
-            <p class="message">¿Aún no tienes cuenta? <a href="signup.html">Registrate</a></p>
+            <p class="message l-msg">¿Aún no tienes cuenta?</p>
+            <a class="l-signup" href="signup.html">Registrate</a>
         </div>
     </div>
 
@@ -71,6 +80,7 @@
     <script src="https://www.gstatic.com/firebasejs/8.6.2/firebase-auth.js"></script>
     <script src="//cdn.jsdelivr.net/npm/sweetalert2@11"></script>
     <script src="./js/signin.js"></script>
+    <script src="./js/language.js"></script>
 </body>
 
 </html>
