@@ -63,7 +63,7 @@ sSend = document.querySelector('.r-send');
 sMsg = document.querySelector('.r-msg');
 sSignin = document.querySelector('.r-signin');
 
-let en = readText("../language/en.json");
+let en = readText("/triviate/language/en.json");
 let interprete_en = JSON.parse(en);
 
 
