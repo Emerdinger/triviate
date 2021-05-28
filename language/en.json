@@ -49,6 +49,9 @@
     "sRegister": "Register",
     "sSend": "CREATE",
     "sMsg": "Do you already have an account?",
-    "sSignIn": "Sign In"
+    "sSignIn": "Sign In",
+    "lRecovery": "Password forgotten",
+    "pRecovery": "Recover password",
+    "pRecover": "Recover"
     
 }

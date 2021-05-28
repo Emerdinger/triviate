@@ -62,8 +62,12 @@ sRegister = document.querySelector('.r-register');
 sSend = document.querySelector('.r-send');
 sMsg = document.querySelector('.r-msg');
 sSignin = document.querySelector('.r-signin');
+lRecovery = document.querySelector('.l-recovery');
+pRecovery = document.querySelector('.p-recovery');
+pRecover = document.querySelector('.p-recover');
 
-let en = readText("/triviate/language/en.json");
+
+let en = readText("../language/en.json");
 let interprete_en = JSON.parse(en);
 
 
@@ -134,6 +138,7 @@ if (localStorage.getItem('en') == 'true') {
         lSend.innerHTML = interprete_en.lSend
         lMsg.innerHTML = interprete_en.lMsg
         lSignup.innerHTML = interprete_en.lSignUp
+        lRecovery.innerHTML = interprete_en.lRecovery
     }
 
     if(document.querySelector('.register-page')){
@@ -143,6 +148,12 @@ if (localStorage.getItem('en') == 'true') {
         sSend.innerHTML = interprete_en.sSend
         sMsg.innerHTML = interprete_en.sMsg
         sSignin.innerHTML = interprete_en.sSignIn
+    }
+
+    if (document.querySelector('.password-page')){
+        lEmail.innerHTML = interprete_en.lEmail
+        pRecovery.innerHTML = interprete_en.pRecovery
+        pRecover.innerHTML = interprete_en.pRecover
     }
 }
 

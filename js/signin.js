@@ -21,16 +21,19 @@ const auth = firebase.auth();
 
 //Se escucha el evento submit del formulario para iniciar sesion
 
-signinForm.addEventListener('submit', (e) => {
-    e.preventDefault();
-
-    const email = document.querySelector('#email').value;
-    const password = document.querySelector('#password').value;
-
-    auth.signInWithEmailAndPassword(email, password).then(userCredential => {
-        cheackVerified(userCredential.user);
+if(document.querySelector('#signIn')){
+    signinForm.addEventListener('submit', (e) => {
+        e.preventDefault();
+    
+        const email = document.querySelector('#email').value;
+        const password = document.querySelector('#password').value;
+    
+        auth.signInWithEmailAndPassword(email, password).then(userCredential => {
+            cheackVerified(userCredential.user);
+        });
     });
-});
+}
+
 
 //Se verifica el estado del usuario loggeado o desloggeado
 
@@ -76,4 +79,27 @@ const cheackVerified = user => {
              window.location.assign('categories.html');
          })
     }
+}
+
+// Reset password
+
+const passwordRecovery = document.querySelector('#passwordRecovery');
+
+if(document.querySelector('#passwordRecovery')){
+    passwordRecovery.addEventListener('submit', (e) =>{
+        e.preventDefault();
+        
+        const email = document.querySelector('#email').value;
+
+        auth.sendPasswordResetEmail(email).then(() =>{
+            Swal.fire({
+                icon: 'success',
+                title: 'Correo enviado correctamente',
+                text: 'Revisa tu correo electronico para continuar con el proceso de recuperación de contraseña',
+                confirmButtonText: 'Volver',
+                backdrop: true
+                
+            }).then(() => {window.location.assign('signin.html')});
+        })
+    })
 }
