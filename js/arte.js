@@ -1,6 +1,6 @@
 window.onload = actualizarCuentaAtras;
 const fs = firebase.firestore();
-let preguntas = readText("../preguntas/arte.json");
+let preguntas = readText("/triviate/preguntas/art.json");
 let interprete_pg = JSON.parse(preguntas);
 var correcto = false;
 var tiempo = 15;
