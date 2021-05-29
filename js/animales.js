@@ -1,4 +1,5 @@
-window.onload = actualizarCuentaAtras; //aki se tiene k poner
+window.onload = actualizarCuentaAtras;
+const fs = firebase.firestore();
 let preguntas = readText("/triviate/preguntas/animals.json");
 let interprete_pg = JSON.parse(preguntas);
 var correcto = false;
@@ -79,6 +80,7 @@ function responder(i) {
     } else {
         btn_correspondiente[i].style.background = 'pink';
         incorrect.play();
+        guardarPuntaje(username,puntuacion);
         setTimeout(() => {
             correcto = true;
             Swal.fire({
@@ -139,6 +141,7 @@ function actualizarCuentaAtras() {
             return
         }
         incorrect.play();
+        guardarPuntaje(username,puntuacion);
         Swal.fire({
             icon: 'error',
             title: 'Perdiste!',
@@ -159,4 +162,22 @@ function actualizarCuentaAtras() {
         tiempo -= 1;
         setTimeout("actualizarCuentaAtras()", 1000);
     }
+}
+
+// Guardar puntaje en firebase
+
+function guardarPuntaje(user,puntaje){
+    const scoreData = {
+        user: user,
+        points: puntaje
+    }
+    fs.collection('rankingAnimales').doc(`${username}`).get().then((snapshot) =>{
+        if(snapshot.data()){
+            if (scoreData.points > snapshot.data().points){
+                fs.collection('rankingAnimales').doc(`${username}`).set(scoreData);
+            }
+        }else{
+            fs.collection('rankingAnimales').doc(`${username}`).set(scoreData);
+        }
+    });
 }

@@ -1,4 +1,5 @@
 window.onload = actualizarCuentaAtras;
+const fs = firebase.firestore();
 var correcto = false;
 var tiempo = 15;
 var correct = new Audio('/triviate/sounds/correct.mp3');
@@ -80,6 +81,7 @@ function responder(i) {
         btn_correspondiente[i].style.background = 'pink';
         incorrect.play();
         setTimeout(() => {
+            guardarPuntaje(username,puntuacion);
             correcto = true;
             Swal.fire({
                 icon: 'error',
@@ -137,6 +139,7 @@ function actualizarCuentaAtras() {
             return
         }
         incorrect.play();
+        guardarPuntaje(username,puntuacion);
         Swal.fire({
             icon: 'error',
             title: 'Perdiste!',
@@ -158,3 +161,23 @@ function actualizarCuentaAtras() {
         setTimeout("actualizarCuentaAtras()", 1000);
     }
 }
+
+// Guardar puntaje en firebase
+
+function guardarPuntaje(user,puntaje){
+    const scoreData = {
+        user: user,
+        points: puntaje
+    }
+    fs.collection('rankingDeportes').doc(`${username}`).get().then((snapshot) =>{
+        if(snapshot.data()){
+            if (scoreData.points > snapshot.data().points){
+                fs.collection('rankingDeportes').doc(`${username}`).set(scoreData);
+            }
+        }else{
+            fs.collection('rankingDeportes').doc(`${username}`).set(scoreData);
+        }
+    });
+}
+
+

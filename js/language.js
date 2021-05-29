@@ -67,7 +67,7 @@ pRecovery = document.querySelector('.p-recovery');
 pRecover = document.querySelector('.p-recover');
 
 
-let en = readText("../language/en.json");
+let en = readText("/triviate/language/en.json");
 let interprete_en = JSON.parse(en);
 
 

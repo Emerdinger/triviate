@@ -1,22 +1,20 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="./css/bootstrap.min.css">
-    <link rel="stylesheet" href="./css/index.css">
     <link rel="stylesheet" href="./css/navbar.css">
+    <link rel="stylesheet" href="./css/categories.css">
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.1/css/all.css"
         integrity="sha384-50oBUHEmvpQ+1lW4y57PTFmhCaXp0ML5d60M1M7uH2+nqUivzIebhndOJK28anvf" crossorigin="anonymous">
-    <title>Triviate</title>
+    <title>Categorias</title>
 </head>
-
-<body>
-    <nav class="navbar fixed-top navbar-expand-lg navbar-light bg-transparent" id="navbar-Color">
+<body class="categories-page">
+    <nav class="navbar navbar-expand-lg navbar-light bg-transparent" id="navbar-Color2">
         <div class="container-fluid" id="navBar-Triviate">
-            <a href="#" id="triviate" class="navbar-brand mb-0 h1">Triviate</a>
+            <a href="index.html" id="triviate2" class="navbar-brand mb-0 h1">Triviate</a>
             <button id="nav-button" class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"
                 aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
                 <span class="navbar-toggler-icon"></span>
@@ -24,28 +22,28 @@
             <div class="collapse navbar-collapse" id="navbarNav">
                 <ul class="navbar-nav ms-auto">
                     <li class="navbar-item">
-                        <a href="#" class="nav-link active nav-home" id="item" aria-current="page">Inicio</a>
+                        <a href="index.html" class="nav-link active nav-home" id="item2" aria-current="page">Inicio</a>
                     </li>
                     <li class="navbar-item">
-                        <a href="#comoSeJuega" class="nav-link nav-howtoplay" id="item">¿Como se juega?</a>
+                        <a href="index.html#comoSeJuega" class="nav-link nav-howtoplay" id="item2">¿Como se juega?</a>
                     </li>
                     <li class="navbar-item">
-                        <a href="#objetivo" class="nav-link nav-objetive" id="item">Objetivo</a>
+                        <a href="index.html#objetivo" class="nav-link nav-objetive" id="item2">Objetivo</a>
                     </li>
                     <li class="navbar-item">
-                        <a href="categories.html" class="nav-link nav-play" id="item">Jugar</a>
+                        <a href="categories.html" class="nav-link nav-play" id="item2">Jugar</a>
                     </li>
                     <li class="navbar-item">
-                        <a href="rankings.html" class="nav-link" id="item">Ranking</a>
+                        <a href="rankings.html" class="nav-link" id="item2">Ranking</a>
                     </li>
                     <li class="navbar-item">
-                        <a href="#" class="nav-link btn btn-light nav-support">Soporte</a>
+                        <a id="item2" href="#" class="nav-link btn btn-light nav-support">Soporte</a>
                     </li>
                     <li class="navbar-item">
                         <a href="" class="nav-link nav-logout" id="logout" style="display: none;">Salir</a>
                     </li>
                     <li class="nav-item dropdown">
-                        <a id="item" href="#" class="nav-link dropdown-toggle s-language" id="navbarDropdownMenuLink" role="button"
+                        <a id="item2" href="#" class="nav-link dropdown-toggle s-language" id="navbarDropdownMenuLink" role="button"
                             data-bs-toggle="dropdown" aria-expanded="false">ES<b class="caret"></b></a>
                         <ul class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
                             <li><a onclick="enSwtich('es')" class="dropdown-item">Español</a></li>
@@ -56,77 +54,69 @@
             </div>
         </div>
     </nav>
-    
 
-    <!-- Wallpaper and name -->
-    <header id="fondo">
-        <div class="container text-center">
-            <div class="row">
-                <h1>Triviate</h1>
-                <p class="enjoy">Diviertete respondiendo nuestra trivia y obteniendo mejores puntajes!</p>
-            </div>
-        </div>
-    </header>
-
-    <!-- Updates -->
-    <div class="updates">
-        <div class="container text-end">
-            <div class="row">
-                <div class="col-md-6">
-                    <h1 class="update" >Actualizaciones...</h1>
-                    <p class="updates-month" >Cada mes actualizamos las preguntas de las trivias!</p>
-                </div>
-            </div>
-        </div>
-    </div>
-
-    <!-- How to play -->
-    <div class="howToPlay" id="comoSeJuega">
-        <div class="container">
-            <div class="row text-center h-tamano">
-                <h1 class="howtoplay">APRENDE A JUGAR</h1>
-                <div class="col-md-3 col-sm-12"></div>
-                <div class="col-md-4 col-sm-12 h-1">
-                    <img class="w-100" src="./images/htoplay.png" alt="">
-                </div>
-                <div class="col-md-3 text-start h-text">
-                    <p class="h-objetive">El objetivo del juego es ver cuantas preguntas puedes llegar a responder correctamente sin que te equivoques, se cuenta con un total de 6 categorias, cada categoria tiene un total de 50 preguntas.</p>
-                </div>
-            </div>
-        </div>
-    </div>
-
-    <!-- Objetivo -->
-    <div class="rules" id="objetivo">
-        <div class="container">
-            <div class="row r-contenedor">
-                <div class="r-texto text-center">
-                    <h1 class="o-categoria">Objetivo del juego</h1>
-                </div>
-                <div class="col-md-2"></div>
-                <div class="col-md-5 r-imagen">
+    <div class="container p-4 text-center">
+        <h1>Ranking Deportes</h1>
+        <div class="row">
+            <div class="col-md-6 offset-md-3">
+                <ul class="list-group" id="ranking-deportes">
                     
-                </div>
-                <div class="col-md-4">
-                    <div class="row">
-                        <div class="col-md-12 r-texto">
-                            <h3 class="o-title">Responder correctamente</h3>
-                            <p class="o-text">El objetivo del juego es obtener la mayor cantidad de preguntas contestadas correctamente, puedes intentarlo las veces que quieras, cada categoria tiene un total de 50 preguntas es decir 50 puntos que puedes llegar a conseguir.</p>
-                        </div>
-                        <div class="col-md-12 r-texto">
-                            <h3 class="c-title">Competir</h3>
-                            <p class="c-text">Vas a competir contra los otros usuarios para ver quien es más habil respondiendo preguntas de una categoría en especifico, el ranking de puntuación se reiniciara mensualmente con la actualización de preguntas.</p>
-                        </div>
-                        <div class="col-md-12 r-texto">
-                            <h3 class="r-title">Recompensas</h3>
-                            <p class="r-text">Los 10 mejores jugadores obtendran una recompensa sorpresa, las recompensas se entregan despues del reinicio del ranking y de preguntas.</p>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-md-1"></div>
+                </ul>
             </div>
         </div>
     </div>
+    <div class="container p-4 text-center">
+        <h1>Ranking Conocimiento General</h1>
+        <div class="row">
+            <div class="col-md-6 offset-md-3">
+                <ul class="list-group" id="ranking-knowledge">
+                    
+                </ul>
+            </div>
+        </div>
+    </div>
+    <div class="container p-4 text-center">
+        <h1>Ranking Arte</h1>
+        <div class="row">
+            <div class="col-md-6 offset-md-3">
+                <ul class="list-group" id="ranking-art">
+                    
+                </ul>
+            </div>
+        </div>
+    </div>
+    <div class="container p-4 text-center">
+        <h1>Ranking Ciencia y Naturaleza</h1>
+        <div class="row">
+            <div class="col-md-6 offset-md-3">
+                <ul class="list-group" id="ranking-science">
+                    
+                </ul>
+            </div>
+        </div>
+    </div>
+    <div class="container p-4 text-center">
+        <h1>Ranking Animales</h1>
+        <div class="row">
+            <div class="col-md-6 offset-md-3">
+                <ul class="list-group" id="ranking-animals">
+                    
+                </ul>
+            </div>
+        </div>
+    </div>
+    <div class="container p-4 text-center">
+        <h1>Ranking Geografía</h1>
+        <div class="row">
+            <div class="col-md-6 offset-md-3">
+                <ul class="list-group" id="ranking-geography">
+                    
+                </ul>
+            </div>
+        </div>
+    </div>
+
+    <!-- Footer -->
 
     <footer>
         <div class="footer1">
@@ -170,18 +160,19 @@
             </div>
         </div>
     </footer>
+    
 
-
+    <!-- Scripts -->
     <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.2/dist/umd/popper.min.js"
         integrity="sha384-IQsoLXl5PILFhosVNubq5LC7Qb9DXgDA9i+tQ8Zj3iwWAwPtgFTxbJ8NT4GN1R8p"
         crossorigin="anonymous"></script>
     <script src="./js/bootstrap.min.js"></script>
-    <script src="./js/index.js"></script>
     <!-- The core Firebase JS SDK is always required and must be listed first -->
     <script src="https://www.gstatic.com/firebasejs/8.6.2/firebase-app.js"></script>
     <script src="https://www.gstatic.com/firebasejs/8.6.2/firebase-auth.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/8.6.2/firebase-firestore.js"></script>
     <script src="./js/logout.js"></script>
     <script src="./js/language.js"></script>
+    <script src="./js/ranking.js"></script>
 </body>
-
 </html>

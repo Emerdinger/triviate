@@ -1,5 +1,6 @@
 window.onload = actualizarCuentaAtras;
 let preguntas = readText("/triviate/preguntas/science.json");
+const fs = firebase.firestore();
 let interprete_pg = JSON.parse(preguntas);
 var correcto = false;
 var tiempo = 15;
@@ -81,6 +82,7 @@ function responder(i) {
         incorrect.play();
         setTimeout(() => {
             correcto = true;
+            guardarPuntaje(username,puntuacion);
             Swal.fire({
                 icon: 'error',
                 title: 'Perdiste!',
@@ -139,6 +141,7 @@ function actualizarCuentaAtras() {
             return
         }
         incorrect.play();
+        guardarPuntaje(username,puntuacion);
         Swal.fire({
             icon: 'error',
             title: 'Perdiste!',
@@ -159,4 +162,22 @@ function actualizarCuentaAtras() {
         tiempo -= 1;
         setTimeout("actualizarCuentaAtras()", 1000);
     }
+}
+
+// Guardar puntaje en firebase
+
+function guardarPuntaje(user,puntaje){
+    const scoreData = {
+        user: user,
+        points: puntaje
+    }
+    fs.collection('rankingCiencia').doc(`${username}`).get().then((snapshot) =>{
+        if(snapshot.data()){
+            if (scoreData.points > snapshot.data().points){
+                fs.collection('rankingCiencia').doc(`${username}`).set(scoreData);
+            }
+        }else{
+            fs.collection('rankingCiencia').doc(`${username}`).set(scoreData);
+        }
+    });
 }
